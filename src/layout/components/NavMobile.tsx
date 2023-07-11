@@ -34,11 +34,7 @@ const NavMobile = ({
 
   return (
     <Box height="100%" width="100%">
-      <Container
-        sx={{
-          height: "64px",
-        }}
-      />
+      <Container sx={{ height: "8vh" }} />
       <AppBar position="fixed">
         <Toolbar sx={{ backgroundColor: "var(--color-primario)" }}>
           <Link href="/" flexGrow={1} underline="none" color="inherit">
