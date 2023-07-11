@@ -34,7 +34,7 @@ const MainSection = () => {
           sm: 2,
         }}
         height={{
-          xs: "100vh",
+          xs: "92vh",
           md: "92vh",
         }}
       >

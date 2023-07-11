@@ -3,7 +3,14 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Divider, Link, Menu, MenuItem, Typography } from "@mui/material";
+import {
+  Container,
+  Divider,
+  Link,
+  Menu,
+  MenuItem,
+  Typography,
+} from "@mui/material";
 import { ReactNode, useState } from "react";
 import { MouseEvent } from "react";
 import NavLogo from "./NavLogo";
@@ -27,6 +34,11 @@ const NavMobile = ({
 
   return (
     <Box height="100%" width="100%">
+      <Container
+        sx={{
+          height: "64px",
+        }}
+      />
       <AppBar position="fixed">
         <Toolbar sx={{ backgroundColor: "var(--color-primario)" }}>
           <Link href="/" flexGrow={1} underline="none" color="inherit">
