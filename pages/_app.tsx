@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <title>Next.js PWA Example</title>
 
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#317EFB" />
+        <meta name="theme-color" content="#3f50b5" />
         {/* favicon */}
         <link
           rel="apple-touch-icon"
