@@ -45,17 +45,20 @@ const PlansSection = () => {
   ];
 
   return (
-    <>
+    <Box marginTop={"4rem"}>
       <Typography textAlign={"center"} variant="h4" className="title">
         Elije el plan que mejor te convenga
       </Typography>
       <br />
       <Grid container spacing={4}>
         {plans.map((item, index) => (
-          <Grid item key={index} xs={12} md={4}>
+          <Grid item key={index} xs={12} sm={6} md={4}>
             <Card elevation={4}>
               <Stack
-                height={"420px"}
+                height={{
+                  sm: "409px",
+                  md: "420px",
+                }}
                 padding={".5rem"}
                 justifyContent={"space-between"}
               >
@@ -92,7 +95,7 @@ const PlansSection = () => {
           </Grid>
         ))}
       </Grid>
-    </>
+    </Box>
   );
 };
 
