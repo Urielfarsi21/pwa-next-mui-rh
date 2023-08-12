@@ -5,7 +5,6 @@ import {
   CardActions,
   CardContent,
   CardHeader,
-  Container,
   Grid,
   Stack,
   Typography,
@@ -46,23 +45,19 @@ const PlansSection = () => {
   ];
 
   return (
-    <Stack spacing={2}>
+    <>
       <Typography textAlign={"center"} variant="h4" className="title">
         Elije el plan que mejor te convenga
       </Typography>
-      <Box>
-        <Grid container spacing={4}>
-          {plans.map((item, index) => (
-            <Grid item key={index} xs={12} md={4}>
-              <Card
-                sx={{
-                  minHeight: "345px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  p: 2,
-                }}
-                elevation={4}
+      <br />
+      <Grid container spacing={4}>
+        {plans.map((item, index) => (
+          <Grid item key={index} xs={12} md={4}>
+            <Card elevation={4}>
+              <Stack
+                height={"420px"}
+                padding={".5rem"}
+                justifyContent={"space-between"}
               >
                 <CardHeader title={item.title} subheader={item.description} />
                 <Box>
@@ -75,8 +70,7 @@ const PlansSection = () => {
                     </Typography>
                     <Typography variant="caption">/mes</Typography>
                   </CardContent>
-                  <CardActions></CardActions>
-                  <Stack direction={"row"} spacing={2}>
+                  <CardActions>
                     <Button
                       variant="contained"
                       className="button contained"
@@ -91,14 +85,14 @@ const PlansSection = () => {
                     >
                       Ver más
                     </Button>
-                  </Stack>
+                  </CardActions>
                 </Box>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    </Stack>
+              </Stack>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </>
   );
 };
 
