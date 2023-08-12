@@ -56,7 +56,7 @@ const PlansSection = () => {
             <Card elevation={4}>
               <Stack
                 height={{
-                  sm: "409px",
+                  sm: "418px",
                   md: "420px",
                 }}
                 padding={".5rem"}
