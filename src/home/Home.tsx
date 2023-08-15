@@ -4,7 +4,7 @@ import MainSection from "@/src/home/components/MainSection";
 const Home = () => {
   return (
     <>
-      <Container maxWidth={false}>
+      <Container>
         <MainSection />
       </Container>
     </>
