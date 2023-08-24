@@ -4,6 +4,7 @@ import { AppProps } from "next/app";
 import Theme from "@/src/theme/Theme";
 import Layout from "@/src/layout/Layout";
 import { Fragment } from "react";
+import Service from "@/src/service/Service";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -43,7 +44,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Theme>
         <Layout>
-          <Component {...pageProps} />
+          <Service>
+            <Component {...pageProps} />
+          </Service>
         </Layout>
       </Theme>
     </Fragment>
