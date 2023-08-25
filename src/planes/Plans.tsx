@@ -1,7 +1,8 @@
 import { Container } from "@mui/material";
 import PlansSection from "@/src/planes/components/PlansSection";
+import { Plan } from "./types/Plans";
 
-const Plans = () => {
+const Plans = ({ plans }: { plans: Plan[] }) => {
   return (
     <>
       <Container
@@ -10,7 +11,7 @@ const Plans = () => {
         className="background-light"
       >
         <Container>
-          <PlansSection />
+          <PlansSection plans={plans} />
         </Container>
       </Container>
     </>

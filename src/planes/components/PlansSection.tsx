@@ -9,27 +9,8 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
-
-// api plans
-// https://mocki.io/v1/819ad59a-d91e-45dd-9820-30f2939b3e34
-
-const usePlans = async (): Promise<Plan[]> => {
-  const plans = await fetch(
-    "https://mocki.io/v1/819ad59a-d91e-45dd-9820-30f2939b3e34"
-  );
-  const json = await plans.json();
-  return json["plans"];
-};
-
-type Plan = {
-  title: string;
-  description: string;
-  price: number;
-  hrefSelectPlan: string;
-  hrefViewMore: string;
-};
+import { Plan } from "../types/Plans";
 
 const GridPlans = ({ plans }: { plans: Plan[] }) => {
   return (
@@ -81,27 +62,14 @@ const GridPlans = ({ plans }: { plans: Plan[] }) => {
   );
 };
 
-const PlansSection = () => {
-  const query = useQuery<Plan[], Error>({
-    queryKey: ["plans"],
-    queryFn: usePlans,
-  });
-
-  if (query.isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (query.isError) {
-    return <div>Error</div>;
-  }
-
+const PlansSection = ({ plans }: { plans: Plan[] }) => {
   return (
     <Box marginTop={"4rem"}>
       <Typography textAlign={"center"} variant="h4" className="title">
         Elije el plan que mejor te convenga
       </Typography>
-      {query.isSuccess && <GridPlans plans={query.data} />}
       <br />
+      <GridPlans plans={plans} />
     </Box>
   );
 };
