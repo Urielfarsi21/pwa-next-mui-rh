@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import Compras from "@/src/compras/Compras";
-import { plans } from "@/src/planes/components/PlansSection";
 import { z } from "zod";
 import { Alert } from "@mui/material";
+import { plans } from "../planes";
 
 const schema = z.object({
   id: z.coerce.number().min(0).max(2),

@@ -3,33 +3,7 @@ import React from "react";
 import { Plan } from "../types/Plan";
 import CardPlanSection from "./CardPlanSection";
 
-export const plans: Plan[] = [
-  {
-    title: "Website",
-    description: "Crea un catálogo profesional y atractivo que sorprenda.",
-    price: 2990,
-    hrefViewMore: "#",
-    hrefSelectPlan: "/comprar/0",
-  },
-  {
-    title: "Business",
-    description:
-      "Comienza a vender al instante con los elementos esenciales del eCommerce.",
-    price: 5990,
-    hrefViewMore: "#",
-    hrefSelectPlan: "/comprar/1",
-  },
-  {
-    title: "Advanced Store",
-    description:
-      "Haz crecer tu negocio con potentes herramientas de marketing.",
-    price: 8990,
-    hrefViewMore: "#",
-    hrefSelectPlan: "/comprar/2",
-  },
-];
-
-const PlansSection = () => {
+const PlansSection = ({ plans }: { plans: Plan[] }) => {
   return (
     <Stack spacing={2}>
       <Typography textAlign={"center"} variant="h4" className="title">
