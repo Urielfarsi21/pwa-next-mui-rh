@@ -4,6 +4,7 @@ import { AppProps } from "next/app";
 import Theme from "@/src/theme/Theme";
 import Layout from "@/src/layout/Layout";
 import { Fragment } from "react";
+import QueryProvider from "@/src/service/QueryProvider";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -42,9 +43,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/site.webmanifest"></link>
       </Head>
       <Theme>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <QueryProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </QueryProvider>
       </Theme>
     </Fragment>
   );
