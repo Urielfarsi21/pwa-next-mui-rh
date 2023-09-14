@@ -1,6 +1,6 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
-import { Plan } from "../types/Plan";
+import { Plan } from "../../types/Plan";
 import CardPlanSection from "./CardPlanSection";
 
 const PlansSection = ({ plans }: { plans: Plan[] }) => {

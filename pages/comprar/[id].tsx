@@ -1,30 +1,21 @@
-import { useRouter } from "next/router";
 import Compras from "@/src/compras/Compras";
-import { z } from "zod";
-import { Alert } from "@mui/material";
-import { plans } from "../planes";
-
-const schema = z.object({
-  id: z.coerce.number().min(0).max(2),
-});
+import { usePlan } from "@/src/compras/hooks/usePlan";
 
 const plan = () => {
-  const router = useRouter();
-  const query = schema.safeParse(router.query);
-
-  if (!query.success) {
-    return <Alert severity="error">Error: plan equivocado</Alert>;
-  }
-
-  const id = query.data.id;
-  const item = plans[id];
+  const plan = usePlan();
 
   return (
-    <Compras
-      title={item.title}
-      description={item.description}
-      price={item.price}
-    />
+    <div>
+      {plan.isLoading && <div>Is Loading</div>}
+      {plan.isError && <div>{plan.error.message}</div>}
+      {plan.isSuccess && (
+        <Compras
+          title={plan.data.title}
+          description={plan.data.description}
+          price={plan.data.price}
+        />
+      )}
+    </div>
   );
 };
 

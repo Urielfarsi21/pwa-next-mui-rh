@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import PlansSection from "@/src/planes/components/PlansSection";
-import { Plan } from "./types/Plan";
+import { Plan } from "../types/Plan";
 
 const Plans = ({ plans }: { plans: Plan[] }) => {
   return (

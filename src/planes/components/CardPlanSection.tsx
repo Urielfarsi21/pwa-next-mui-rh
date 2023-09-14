@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { Plan } from "../types/Plan";
+import { Plan } from "../../types/Plan";
 
 const CardPlanSection = ({ item }: { item: Plan }) => {
   return (
