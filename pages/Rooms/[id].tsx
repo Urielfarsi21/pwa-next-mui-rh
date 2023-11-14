@@ -21,14 +21,13 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 export default function MediaCard() {
   return (
     <>
-
       <Box
         sx={{
           backgroundColor: "#414141",
           color: "white",
         }}
       >
-        <Stack justifyContent={"center"} direction="row" marginTop={5}>
+        <Stack justifyContent={"center"} direction="row" marginTop={2}>
           <ButtonGroup
             variant="contained"
             aria-label="outlined primary button group"
