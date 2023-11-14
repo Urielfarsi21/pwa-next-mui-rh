@@ -27,7 +27,7 @@ export default function MediaCard() {
           color: "white",
         }}
       >
-        <Stack justifyContent={"center"} direction="row" marginTop={2}>
+        <Stack justifyContent={"center"} direction="row" marginTop={0.5}>
           <ButtonGroup
             variant="contained"
             aria-label="outlined primary button group"
